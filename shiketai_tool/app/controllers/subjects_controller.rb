@@ -11,11 +11,11 @@ class SubjectsController < ApplicationController
   end
 
   def show
-    @subject = Subject.find(param[:id])
+    @subject = Subject.find(params[:id])
   end
 
   def index
-    @projects = Project.all
+    @subjects = Subject.all
   end
 
   private
