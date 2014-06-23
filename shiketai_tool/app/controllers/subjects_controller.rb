@@ -1,6 +1,6 @@
 class SubjectsController < ApplicationController
   def new
-    @subject = Subejct.new
+    @subject = Subject.new
   end
 
   def create
@@ -17,4 +17,9 @@ class SubjectsController < ApplicationController
   def index
     @projects = Project.all
   end
+
+  private
+    def subject_params
+	  params.require(:subject).permit(:subject_name, :teacher_id, :day_of_a_week_id, :period_id, :semester_id, :description)
+	end
 end
