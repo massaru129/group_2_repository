@@ -1,14 +1,19 @@
 <h1>新しく科目を登録する</h1>
-<%= form_for :subject, url: projects_path do |f| %>
+<%= form_for :subject, url: subjects_path do |f| %>
   <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label :subject_name %><br>
+    <%= f.text_field :subject_name %>
   </p>
  
   <p>
-    <%= f.label :teacher %><br>
-    <%= f.text_area :teacher %>
+    <%= f.label :teacher_id %><br>
+    <%= f.text_area :teacher_id %>
   </p>
+
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  <p>
  
   <p>
     <%= f.submit %>
