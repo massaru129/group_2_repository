@@ -1,0 +1,22 @@
+<h1>Subjects</h1>
+<table>
+  <tr>
+    <th>科目名</th>
+	<th>教員名</th>
+    <th>曜日</th>
+    <th>時限</th>
+	<th>学期</th>
+	<th>説明</th>
+  </tr>
+  <% @subjects.each do |subject|  %>
+  <tr>
+    <td><%= link_to subject.subject_name, subject_path(subject) %></td> 
+    <td><%= subject.teacher_id %></td> 
+    <td><%= subject.day_of_a_week_id %></td> 
+    <td><%= subject.period_id %></td> 
+    <td><%= subject.semester_id %></td> 
+    <td><%= subject.description %></td> 
+  </tr>
+  <% end %>
+</table>
+
