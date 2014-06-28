@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140628092004) do
+ActiveRecord::Schema.define(version: 20140628094247) do
+
+  create_table "periods", force: true do |t|
+    t.string   "period_name", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "subjects", force: true do |t|
     t.string   "subject_name",  null: false
