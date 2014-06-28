@@ -7,6 +7,8 @@ class SubjectsController < ApplicationController
     @subject = Subject.new(subject_params)
 	if @subject.save
 	  redirect_to @subject
+	else
+	  render 'new'
 	end
   end
   
@@ -34,7 +36,7 @@ class SubjectsController < ApplicationController
   def destroy
     @subject = Subject.find(params[:id])
 	@subject.destroy
-	redirect_to subujects_path
+	redirect_to subjects_path
   end
 
   private

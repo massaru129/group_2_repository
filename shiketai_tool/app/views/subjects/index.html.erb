@@ -8,6 +8,7 @@
     <th>時限</th>
 	<th>学期</th>
 	<th>説明</th>
+	<th colspan="3"></th>
   </tr>
   <% @subjects.each do |subject|  %>
   <tr>
@@ -17,6 +18,9 @@
     <td><%= subject.period_id %></td> 
     <td><%= subject.semester_id %></td> 
     <td><%= subject.description %></td> 
+	<td><%= link_to '編集', edit_subject_path(subject) %></td>
+	<td><%= link_to '削除', subject_path(subject),
+	        method: :delete, data: { confirm: '本当によろしいですか？' } %></td>
   </tr>
   <% end %>
 </table>
