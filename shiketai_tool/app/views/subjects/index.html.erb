@@ -1,0 +1,26 @@
+<h1>教科一覧</h1>
+<%= link_to "新しく教科を追加する。", new_subject_path %>
+<table>
+  <tr>
+    <th>科目名</th>
+	<th>教員名</th>
+    <th>曜日</th>
+    <th>時限</th>
+	<th>学期</th>
+	<th>説明</th>
+	<th colspan="3"></th>
+  </tr>
+  <% @subjects.each do |subject|  %>
+  <tr>
+    <td><%= link_to subject.subject_name, subject_path(subject) %></td> 
+    <td><%= subject.teacher %></td> 
+    <td><%= subject.day_of_a_week %></td> 
+    <td><%= subject.period %></td> 
+    <td><%= subject.semester %></td> 
+    <td><%= subject.description %></td> 
+	<td><%= link_to '編集', edit_subject_path(subject) %></td>
+	<td><%= link_to '削除', subject_path(subject),
+	        method: :delete, data: { confirm: '本当によろしいですか？' } %></td>
+  </tr>
+  <% end %>
+</table>
