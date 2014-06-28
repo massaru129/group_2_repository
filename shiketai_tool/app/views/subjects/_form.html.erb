@@ -1,0 +1,45 @@
+<%= form_for @subject do |f| %>
+  <% if @subject.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@subject.errors.count, "error") %> 入力内容が適切ではありません。	</h2>
+    <ul>
+    <% @subject.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %> 
+  <p>
+    <%= f.label :subject_name %><br>
+    <%= f.text_area :subject_name %>
+  </p>
+ 
+  <p>
+    <%= f.label :teacher %><br>
+    <%= f.text_area :teacher %>
+  </p>
+
+  <p>
+    <%= f.label :day_of_a_week %><br>
+    <%= f.collection_select :day_of_a_week, DayOfAWeek.all, :day_of_a_week, :day_of_a_week %>
+  <p>
+  
+  <p>
+    <%= f.label :period %><br>
+    <%= f.collection_select :period, Period.all, :period, :period %>
+  <p>
+  
+  <p>
+    <%= f.label :semester %><br>
+    <%= f.collection_select :semester, Semester.all, :semester, :semester %>
+  <p>
+  
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  <p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
