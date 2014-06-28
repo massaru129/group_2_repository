@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140628102056) do
+ActiveRecord::Schema.define(version: 20140628103242) do
 
   create_table "day_of_a_weeks", force: true do |t|
     t.string   "day_of_a_week", null: false
@@ -21,6 +21,12 @@ ActiveRecord::Schema.define(version: 20140628102056) do
 
   create_table "periods", force: true do |t|
     t.string   "period",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "semesters", force: true do |t|
+    t.string   "semester",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

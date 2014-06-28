@@ -24,3 +24,7 @@ DayOfAWeek.create(day_of_a_week: '木曜日', created_at: DateTime.now.to_s(:db)
 DayOfAWeek.create(day_of_a_week: '金曜日', created_at: DateTime.now.to_s(:db), updated_at:DateTime.now.to_s(:db))
 DayOfAWeek.create(day_of_a_week: '土曜日', created_at: DateTime.now.to_s(:db), updated_at:DateTime.now.to_s(:db))
 DayOfAWeek.create(day_of_a_week: '集中講義', created_at: DateTime.now.to_s(:db), updated_at:DateTime.now.to_s(:db))
+
+# 学期情報を挿入
+Semester.create(semester: '夏学期', created_at: DateTime.now.to_s(:db), updated_at:DateTime.now.to_s(:db))
+Semester.create(semester: '冬学期', created_at: DateTime.now.to_s(:db), updated_at:DateTime.now.to_s(:db))
