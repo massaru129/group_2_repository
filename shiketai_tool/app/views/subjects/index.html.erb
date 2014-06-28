@@ -13,10 +13,10 @@
   <% @subjects.each do |subject|  %>
   <tr>
     <td><%= link_to subject.subject_name, subject_path(subject) %></td> 
-    <td><%= subject.teacher_id %></td> 
-    <td><%= subject.day_of_a_week_id %></td> 
-    <td><%= subject.period_id %></td> 
-    <td><%= subject.semester_id %></td> 
+    <td><%= subject.teacher %></td> 
+    <td><%= subject.day_of_a_week %></td> 
+    <td><%= subject.period %></td> 
+    <td><%= subject.semester %></td> 
     <td><%= subject.description %></td> 
 	<td><%= link_to '編集', edit_subject_path(subject) %></td>
 	<td><%= link_to '削除', subject_path(subject),

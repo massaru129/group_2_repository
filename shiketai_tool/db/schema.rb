@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140623083143) do
+ActiveRecord::Schema.define(version: 20140628092004) do
 
   create_table "subjects", force: true do |t|
-    t.string   "subject_name",     null: false
-    t.string   "teacher_id",       null: false
-    t.integer  "day_of_a_week_id", null: false
-    t.integer  "period_id",        null: false
-    t.integer  "semester_id",      null: false
-    t.string   "description",      null: false
+    t.string   "subject_name",  null: false
+    t.string   "teacher",       null: false
+    t.string   "day_of_a_week", null: false
+    t.string   "period",        null: false
+    t.string   "semester",      null: false
+    t.text     "description",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
