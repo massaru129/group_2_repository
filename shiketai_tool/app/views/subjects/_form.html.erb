@@ -26,12 +26,12 @@
   
   <p>
     <%= f.label :period %><br>
-    <%= f.text_area :period %>
+    <%= f.collection_select :period, Period.all, :period_name, :period_name %>
   <p>
   
   <p>
     <%= f.label :semester %><br>
-    <%= f.text_area :semester %>
+    <%= f.text_area :semester%>
   <p>
   
   <p>
