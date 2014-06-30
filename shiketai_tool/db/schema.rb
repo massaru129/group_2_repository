@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140628103242) do
+ActiveRecord::Schema.define(version: 20140630051147) do
+
+  create_table "blackboards", force: true do |t|
+    t.string   "title",       null: false
+    t.string   "string",      null: false
+    t.string   "description", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "day_of_a_weeks", force: true do |t|
     t.string   "day_of_a_week", null: false
