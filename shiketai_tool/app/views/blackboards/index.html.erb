@@ -9,6 +9,7 @@
  
   <% @blackboards.each do |blackboard| %>
     <tr>
+	  <td><%= image_tag blackboard.material.url(:thumb) %></td> 
       <td><%= link_to  blackboard.title, blackboard_path(blackboard) %></td>
       <td><%= blackboard.description %></td>
       <td><%= link_to '編集', edit_blackboard_path(blackboard) %></td>

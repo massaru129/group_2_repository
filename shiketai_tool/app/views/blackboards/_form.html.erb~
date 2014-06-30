@@ -1,4 +1,4 @@
-<%= form_for @blackboard,  url: blackboards_path, html:{multipart:true} do |f| %>
+<%= form_for @blackboard do |f| %>
   <% if @blackboard.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@blackboard.errors.count, "error") %> 入力内容が適切ではありません。	</h2>
@@ -17,11 +17,6 @@
   <p>
     <%= f.label :description %><br>
     <%= f.text_area :description %>
-  </p>
-
-  <p>
-    <%= f.label :material %><br>
-    <%= f.file_field :material %>
   </p>
  
   <p>
