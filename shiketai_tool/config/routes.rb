@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'blackboards/new'
+
+  get 'blackboards/create'
+
+  get 'blackboards/show'
+
+  get 'blackboards/edit'
+
   root 'welcome#index'
   
   resources :subjects
