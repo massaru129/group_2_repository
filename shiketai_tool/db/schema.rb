@@ -11,14 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140630051147) do
+ActiveRecord::Schema.define(version: 20140630055751) do
 
   create_table "blackboards", force: true do |t|
-    t.string   "title",       null: false
-    t.string   "string",      null: false
-    t.string   "description", null: false
+    t.string   "title",                 null: false
+    t.string   "string",                null: false
+    t.string   "description",           null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "material_file_name"
+    t.string   "material_content_type"
+    t.integer  "material_file_size"
+    t.datetime "material_updated_at"
   end
 
   create_table "day_of_a_weeks", force: true do |t|
