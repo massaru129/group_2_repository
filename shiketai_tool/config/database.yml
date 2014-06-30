@@ -10,7 +10,7 @@ development:
   database: shiketai_tool_development
   pool: 5
   user: root
-  password: root
+  password: 
   timeout: 5000
   host: localhost
 
@@ -24,7 +24,7 @@ test:
   database: shiketai_tool_test
   pool: 5
   user: root
-  password: root
+  password:
   timeout: 5000
   host: localhost
 
@@ -35,6 +35,6 @@ production:
   database: shiketai_tool_test
   pool: 5
   user: root
-  password: root
+  password:
   timeout: 5000
   host: localhost
