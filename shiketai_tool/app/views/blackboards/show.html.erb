@@ -1,2 +1,12 @@
-<h1>Blackboards#show</h1>
-<p>Find me in app/views/blackboards/show.html.erb</p>
+<p>
+  <strong>Title:</strong>
+  <%= @blackboard.title %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= @blackboard.description %>
+</p>
+
+<%= link_to 'ファイル一覧に戻る', blackboards_path %>
+| <%= link_to 'ファイルを交換する', edit_blackboard_path(@blackboard) %>

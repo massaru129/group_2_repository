@@ -1,15 +1,8 @@
 Rails.application.routes.draw do
-  get 'blackboards/new'
-
-  get 'blackboards/create'
-
-  get 'blackboards/show'
-
-  get 'blackboards/edit'
-
   root 'welcome#index'
   
   resources :subjects
+  resources :blackboards
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
