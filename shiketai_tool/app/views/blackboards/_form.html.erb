@@ -1,14 +1,5 @@
-<%= form_for @blackboard,  url: blackboards_path, html:{multipart:true} do |f| %>
-  <% if @blackboard.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@blackboard.errors.count, "error") %> 入力内容が適切ではありません。	</h2>
-    <ul>
-    <% @blackboard.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-  <% end %>
+<h2>新しく板書を登録する</h2>
+<%= form_for [@subject, @subject.blackboards.build], html:{multipart:true} do |f| %>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>

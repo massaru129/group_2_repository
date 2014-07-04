@@ -6,5 +6,8 @@
 学期: <%= @subject.semester %><br>
 説明: <%= @subject.description %><br>
 
+<%= render "blackboards/blackboards" %>
+<%= render "blackboards/form" %>
+<br><br>
 <%= link_to "教科情報を編集する", edit_subject_path %>|
 <%= link_to "教科一覧に戻る", subjects_path %>
