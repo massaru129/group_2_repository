@@ -18,11 +18,7 @@ class BlackboardsController < ApplicationController
   def update
     @subject = Subject.find(params[:subject_id])
     @blackboard = @subject.blackboards.find(params[:id])
-    if @blackboard.update(blackboard_params)
-      redirect_to @blackboard
-    else
-      render 'edit'
-    end
+    redirect_to @blackboard
   end
 
   def destroy

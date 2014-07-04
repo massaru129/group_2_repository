@@ -1,3 +1,4 @@
+<%= @blackboards %>
 <%= form_for [@subject, @subject.blackboards.build], html:{multipart:true} do |f| %>
   <p>
     <%= f.label :title %><br>
