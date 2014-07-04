@@ -6,13 +6,13 @@
 	  <th>説明</th>
 	  <th colspan="2"></th>
     </tr>
-    <% @subject.blackboards.each do |blackboard| %>
+    <% @blackboards.each do |blackboard| %>
     <tr>
 	  <td><%= image_tag blackboard.material.url(:thumb) %></td>
 	  <td><%= blackboard.title %></td>
 	  <td><%= blackboard.description %></td>
-	  <td><%= link_to '編集', edit_subject_blackboard_path(@subject, blackboard) %></td>
-	  <td><%= link_to '削除', subject_blackboard_path(@subject, blackboard), 
+	  <td><%= link_to '編集', edit_blackboard_path(blackboard) %></td>
+	  <td><%= link_to '削除', blackboard_path(blackboard), 
 	          method: :delete, 
 			  data: { confirm: '本当によろしいですか？' } 
 		  %></td>

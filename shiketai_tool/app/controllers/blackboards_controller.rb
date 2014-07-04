@@ -1,35 +1,51 @@
 class BlackboardsController < ApplicationController
-  def create
-    @subject = Subject.find(params[:subject_id])
-    @blackboard = @subject.blackboards.create(blackboard_params)
-	redirect_to subject_path(@subject)
+  def new
+    @blackboard = Blackboard.new
   end
 
+  def create
+    @blackboard = Blackboard.new(blackboard_params)
+	@subject = Subject.find(@blackboard.subject_id)
+	if @blackboard.save
+	  redirect_to @subject
+	else
+	  render 'new'
+	end
+  end
+  
   def show
-    @subject = Subject.find(params[:subject_id])
-    @blackboard = @subject.blackboards.find(params[:id])
+    @blackboard = Blackboard.find(params[:id])
+  end
+
+  def index
+    @blackboards = Blackboard.all
   end
 
   def edit
-    @subject = Subject.find(params[:subject_id])
-    @blackboard = @subject.blackboards.find(params[:id])
-  end
-  
-  def update
-    @subject = Subject.find(params[:subject_id])
-    @blackboard = @subject.blackboards.find(params[:id])
-    redirect_to @blackboard
+    @blackboard = Blackboard.find(params[:id])
+	@subject = Subject.find(@blackboard.subject_id)
   end
 
+  def update
+    @blackboard = Blackboard.find(params[:id])
+	@subject = Subject.find(@blackboard.subject_id)
+    if @blackboard.update(blackboard_params)
+      redirect_to @subject
+    else
+      render 'edit'
+    end
+  end
+  
   def destroy
-    @subject = Subject.find(params[:subject_id])
-    @blackboard = @subject.blackboards.find(params[:id])
-	@blackboard.destroy
-	redirect_to subject_path(@subject)
+    @blackboard = Blackboard.find(params[:id])
+	@subject = Subject.find(@blackboard.subject_id)
+    @blackboard.destroy
+    redirect_to @subject
   end
 
   private
     def blackboard_params
 	  params.require(:blackboard).permit(:title, :description, :material, :subject_id)
 	end
+
 end
