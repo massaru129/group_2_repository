@@ -1,17 +1,8 @@
 class BlackboardsController < ApplicationController
-  def new
-    @subject = Subject.find(params[:subject_id])
-	@blackboard = @subject.blackboards(params[:id])
-  end
-  
   def create
     @subject = Subject.find(params[:subject_id])
     @blackboard = @subject.blackboards.create(blackboard_params)
-    if @blackboard.save
-      redirect_to subject_path(@subject)
-	else
-	  render 'new'
-	end
+	redirect_to subject_path(@subject)
   end
 
   def show

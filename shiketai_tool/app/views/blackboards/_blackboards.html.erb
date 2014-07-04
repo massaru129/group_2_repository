@@ -4,12 +4,19 @@
 	  <th>板書</th>
 	  <th>タイトル</th>
 	  <th>説明</th>
+	  <th colspan="2"></th>
     </tr>
     <% @subject.blackboards.each do |blackboard| %>
     <tr>
 	  <td><%= image_tag blackboard.material.url(:thumb) %></td>
 	  <td><%= blackboard.title %></td>
 	  <td><%= blackboard.description %></td>
+	  <td><%= link_to '編集', edit_subject_blackboard_path(@subject, blackboard) %></td>
+	  <td><%= link_to '削除', subject_blackboard_path(@subject, blackboard), 
+	          method: :delete, 
+			  data: { confirm: '本当によろしいですか？' } 
+		  %></td>
+
     </tr>
     <% end %>
   </table>
