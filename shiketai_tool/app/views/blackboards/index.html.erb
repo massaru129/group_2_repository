@@ -1,0 +1,20 @@
+<h1>板書一覧</h1>
+<%= link_to "新しく板書を追加する。", new_blackboard_path %>
+<table>
+  <tr>
+    <th>タイトル</th>
+	<th>説明</th>
+    <th>資料</th>
+	<th colspan="2"></th>
+  </tr>
+  <% @subject.blackboards each do |blackboard|  %>
+    <tr>
+      <td><%= blackboard.title %></td> 
+      <td><%= blackboard.description %></td> 
+      <td><%= image_tag blackboard.material.url(:thum) %></td> 
+	  <td><%= link_to '編集', edit_blackboard_path(blackboard) %></td>
+	  <td><%= link_to '削除', blackboard_path(blackboard),
+	          method: :delete, data: { confirm: '本当によろしいですか？' } %></td>
+    </tr>
+  <% end %>
+</table>
