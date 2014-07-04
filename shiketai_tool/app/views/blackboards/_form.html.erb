@@ -1,5 +1,4 @@
-<% if @subject.blackboards.nil?  then%>
-  <%= form_for [@subject, @subject.blackboards.build], html:{multipart:true} do |f| %>
+<% if @subject.blackboards.blank?  then %>
 <% else %>
   <%= form_for [@subject, @subject.blackboards.find(params[:id])], html:{multipart:true} do |f| %>
     <p>
@@ -20,5 +19,5 @@
     <p>
       <%= f.submit %>
     </p>
-<% end %>
+  <% end %>
 <% end %>
