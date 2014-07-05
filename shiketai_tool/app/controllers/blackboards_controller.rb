@@ -12,7 +12,7 @@ class BlackboardsController < ApplicationController
 
   def show
     @subject = Subject.find(params[:subject_id])
-    @blackboard = @subject.blackboards.find(params[:id])
+    @blackboard = Blackboard.find(params[:id])
   end
 
   def edit

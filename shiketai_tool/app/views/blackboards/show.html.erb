@@ -1,12 +1,7 @@
-<p>
-  <strong>Title:</strong>
-  <%= @blackboard.title %>
-</p>
- 
-<p>
-  <strong>Description:</strong>
-  <%= @blackboard.description %>
-</p>
+<h3>板書</h3>
+<%= link_to "教科ページに戻る", subject_path(@subject) %><br>
 
-<%= link_to 'ファイル一覧に戻る', subject_blackboards_path %>
-| <%= link_to 'ファイルを交換する', edit_subject_blackboard_path(@blackboard) %>
+<%= @blackboard.title %><br>
+<%= @blackboard.description %><br>
+<%= link_to "Download", @blackboard.material.url(:original, false) %><br>
+<%= image_tag @blackboard.material.url(:original) %>
