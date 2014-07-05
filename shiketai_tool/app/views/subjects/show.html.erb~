@@ -1,0 +1,39 @@
+<h1><%= @subject.subject_name%></h1>
+教科名: <%= @subject.subject_name %><br>
+先生: <%= @subject.teacher %><br>
+曜日: <%= @subject.day_of_a_week %><br>
+時限: <%= @subject.period %><br>
+学期: <%= @subject.semester %><br>
+説明: <%= @subject.description %><br>
+
+<%= render "blackboards/blackboards" %>
+
+<h4>【板書一覧】</h4>
+
+ <table class="table">
+    <tr>
+	  <th>板書</th>
+	  <th>タイトル</th>
+	  <th>説明</th>
+	  <th colspan="2"></th>
+    </tr>
+    <% @subject.blackboards.each do |blackboard| %>
+    <tr>
+	  <td><%= image_tag blackboard.material.url(:thumb) %></td>
+	  <td><%= blackboard.title %></td>
+	  <td><%= blackboard.description %></td>
+	  <td><%= link_to '編集', edit_subject_blackboard_path(@subject, blackboard) %></td>
+	  <td><%= link_to '削除', subject_blackboard_path(@subject, blackboard), 
+	          method: :delete, 
+			  data: { confirm: '本当によろしいですか？' } 
+		  %></td>
+
+    </tr>
+    <% end %>
+  </table>  
+
+
+<%= link_to "新しく板書を登録する", new_subject_blackboard_path(@subject) %>
+<br><br>
+<%= link_to "教科情報を編集する", edit_subject_path %>|
+<%= link_to "教科一覧に戻る", subjects_path %>

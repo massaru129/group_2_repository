@@ -1,7 +1,7 @@
 class BlackboardsController < ApplicationController
   def new
-    @blackboard = Blackboard.new
-	@subject = Subject.new
+	@subject = Subject.find(params[:subject_id])
+    @blackboard = @subject.blackboards.new
   end
 
   def create
