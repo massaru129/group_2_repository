@@ -29,9 +29,21 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-      　<li><a href="#"><i class="glyphicon glyphicon-home">ホーム</i></a></li>
-	<li><a href="#"><i class="glyphicon glyphicon-download">ダウンロード</i></a></li>
-        <li><a href="#"><i class="glyphicon glyphicon-upload">アップロード</i></a></li>
+      　<li>
+	       <%= link_to subjects_path do %>
+		     <i class="glyphicon glyphicon-home">ホーム</i>
+		   <% end %>
+	    </li>
+      　<li>
+	       <%= link_to subjects_path do %>
+		     <i class="glyphicon glyphicon-download">ダウンロード</i>
+		   <% end %>
+	    </li>
+      　<li>
+	       <%= link_to subjects_path do %>
+		     <i class="glyphicon glyphicon-upload">アップロード</i>
+		   <% end %>
+	    </li>
         <li><a href="#">科目一覧</a></li>
       </ul>
       <form class="navbar-form navbar-left" role="search">
@@ -53,8 +65,10 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-        
-<%= yield %>
-
+<div id="wrap">
+  <div class="container">
+    <%= yield %>
+  </div>
+</div>
 </body>
 </html>
