@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140703223954) do
+ActiveRecord::Schema.define(version: 20140705153830) do
 
   create_table "blackboards", force: true do |t|
     t.string   "title"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140703223954) do
     t.string   "material_content_type"
     t.integer  "material_file_size"
     t.datetime "material_updated_at"
+    t.datetime "deadline"
   end
 
   create_table "day_of_a_weeks", force: true do |t|
