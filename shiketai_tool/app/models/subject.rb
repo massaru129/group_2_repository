@@ -1,4 +1,5 @@
 class Subject < ActiveRecord::Base
+  has_many :blackboards, dependent: :destroy
   validates :subject_name, presence: true
   validates :teacher, presence: true
   validates :period, presence: true
