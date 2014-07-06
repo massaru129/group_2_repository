@@ -125,7 +125,8 @@ function parse_blackboards(blackboards){
   for(var i=0;i<blackboards.length;i++){
      blackboard_events.push({
                             title:blackboards[i].title,
-                            start: "2014-07-03"
+                            start: blackboards[i].deadline,
+							end: blackboards[i].deadline
                             });
   }
   return blackboard_events
