@@ -35,5 +35,7 @@ Subject.create(subject_name: '数理計画と最適化', teacher: 'かっちゃ�
 Subject.create(subject_name: '国語', teacher: 'おさむ', day_of_a_week:'月曜日', period: "1限目", semester: "冬学期", description: "いつやるか？今でしょ！", created_at: DateTime.now.to_s(:db), updated_at:DateTime.now.to_s(:db))
 
 # 科目情報を挿入
-Blackboard.create(subject_id: '1', description:'巡回しません', title: "巡回セールスマン問題", created_at: DateTime.now.to_s(:db), updated_at:DateTime.now.to_s(:db))
-Blackboard.create(subject_id: '1', description:'バナナはおやつに入りますか？', title: "ナップザック問題", created_at: DateTime.now.to_s(:db), updated_at:DateTime.now.to_s(:db), deadline: DateTime.now.to_s(:db))
+Blackboard.create(subject_id: '1', description:'巡回しません', title: "巡回セールスマン問題", created_at: DateTime.now.to_s(:db), updated_at:DateTime.now.to_s(:db), deadline: (DateTime.now+12).to_s(:db))
+Blackboard.create(subject_id: '1', description:'バナナはおやつに入りません', title: "ナップザック問題", created_at: DateTime.now.to_s(:db), updated_at:DateTime.now.to_s(:db), deadline: (DateTime.now-1).to_s(:db))
+Blackboard.create(subject_id: '2', description:'流行語大賞おめでとう', title: "いつやるか？", created_at: DateTime.now.to_s(:db), updated_at:DateTime.now.to_s(:db), deadline: (DateTime.now+7).to_s(:db))
+Blackboard.create(subject_id: '2', description:'はいはい', title: "今でしょ", created_at: DateTime.now.to_s(:db), updated_at:DateTime.now.to_s(:db), deadline: (DateTime.now+2).to_s(:db))
