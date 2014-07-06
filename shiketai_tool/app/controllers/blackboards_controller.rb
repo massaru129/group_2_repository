@@ -7,7 +7,11 @@ class BlackboardsController < ApplicationController
   def create
     @subject = Subject.find(params[:subject_id])
     @blackboard = @subject.blackboards.create(blackboard_params)
-	redirect_to subject_path(@subject)
+	if @blackboard.save
+	   redirect_to subject_path(@subject)
+	else
+	   render 'new'
+	end
   end
 
   def show
@@ -23,8 +27,11 @@ class BlackboardsController < ApplicationController
   def update
     @subject = Subject.find(params[:subject_id])
     @blackboard = @subject.blackboards.find(params[:id])
-	@blackboard.update(blackboard_params)
-    redirect_to @subject
+	if @blackboard.update(blackboard_params)
+	   redirect_to subject_path(@subject)
+	else
+	   render 'edit'
+	end
   end
 
   def destroy
@@ -36,6 +43,6 @@ class BlackboardsController < ApplicationController
 
   private
     def blackboard_params
-	  params.require(:blackboard).permit(:title, :description, :material, :subject_id)
+	  params.require(:blackboard).permit(:title, :description, :material, :subject_id, :deadline)
 	end
 end

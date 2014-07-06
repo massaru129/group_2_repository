@@ -4,6 +4,7 @@
 	  <th>板書</th>
 	  <th>タイトル</th>
 	  <th>説明</th>
+	  <th>備考</th>
 	  <th colspan="2"></th>
     </tr>
     <% @subject.blackboards.each do |blackboard| %>
@@ -11,6 +12,7 @@
 	  <td><%= image_tag blackboard.material.url(:thumb) %></td>
 	  <td><%= link_to blackboard.title, subject_blackboard_path(@subject, blackboard) %></td>
 	  <td><%= blackboard.description %></td>
+	  <td><%= blackboard.deadline %></td>
 	  <td><%= link_to '編集', edit_subject_blackboard_path(@subject, blackboard) %></td>
 	  <td><%= link_to '削除', subject_blackboard_path(@subject, blackboard), 
 	          method: :delete, 
