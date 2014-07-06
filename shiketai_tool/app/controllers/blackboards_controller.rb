@@ -43,6 +43,6 @@ class BlackboardsController < ApplicationController
 
   private
     def blackboard_params
-	  params.require(:blackboard).permit(:title, :description, :material, :subject_id)
+	  params.require(:blackboard).permit(:title, :description, :material, :subject_id, :deadline)
 	end
 end
