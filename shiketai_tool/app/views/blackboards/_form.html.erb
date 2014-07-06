@@ -1,4 +1,14 @@
   <%= form_for [@subject, @subject.blackboards.build], html:{multipart:true} do |f| %>
+    <% if @blackboard.errors.any? %>
+    <div id="error_explanation">
+      <h2> 入力内容が適切ではありません。</h2>
+      <ul>
+      <% @blackboard.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+	<% end %>
     <p>
       <%= f.label :title %><br>
       <%= f.text_field :title %>
