@@ -1,3 +1,4 @@
+  <% require "date" %>
   <%= form_for [@subject, @subject.blackboards.build], html:{multipart:true} do |f| %>
     <% if @blackboard.errors.any? %>
     <div id="error_explanation">
@@ -20,6 +21,11 @@
     </p>
 
     <p>
+      <%= f.label :deadline %><br>
+      <%= f.datetime_select :deadline , default:DateTime.now+1 %>
+    </p>
+    
+	<p>
       <%= f.label :material %><br>
       <%= f.file_field :material %>
     </p>
