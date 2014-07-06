@@ -56,9 +56,9 @@ $(document).ready(function() {
         // 最大時間
         maxTime: 20,
         // 表示する年
-        year: 2012,
+        year: 2014,
         // 表示する月
-        month: 12,
+        month: 6,
         // 表示する日
         day: 31,
         // 時間の書式
@@ -105,7 +105,7 @@ $(document).ready(function() {
         // イベントソース
         eventSources: [
             {
-                events: gon.blackboards
+                events: parse_blackboards(gon.blackboards)
     
             }
         ]
@@ -119,3 +119,14 @@ $(document).ready(function() {
     // カレンダーを破棄（イベントハンドラや内部データも破棄する）
     //$('#calendar').fullCalendar('destroy')
 });
+
+function parse_blackboards(blackboards){
+  var blackboard_events = [];
+  for(var i=0;i<blackboards.length;i++){
+     blackboard_events.push({
+                            title:blackboards[i].title,
+                            start: "2014-07-03"
+                            });
+  }
+  return blackboard_events
+}
