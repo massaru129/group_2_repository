@@ -1,7 +1,7 @@
 <%= form_for @subject do |f| %>
   <% if @subject.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@subject.errors.count, "error") %> 入力内容が適切ではありません。	</h2>
+    <h2>入力内容が適切ではありません。</h2>
     <ul>
     <% @subject.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>

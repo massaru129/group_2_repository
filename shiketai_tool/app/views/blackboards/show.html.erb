@@ -1,0 +1,7 @@
+<h3>板書</h3>
+<%= link_to "教科ページに戻る", subject_path(@subject) %><br>
+
+<%= @blackboard.title %><br>
+<%= @blackboard.description %><br>
+<%= link_to "Download", @blackboard.material.url(:original, false) %><br>
+<%= image_tag @blackboard.material.url(:original) %>
