@@ -1,5 +1,12 @@
 <h1><%= @blackboard.title %></h1>
-<h4><%= @blackboard.description %></h4>
-<button class="btn btn-default"><%= link_to "Download", @blackboard.material.url(:original, false) %></button><br>
-<%= image_tag @blackboard.material.url(:original) %>
+<blockquote>
+  <%= @blackboard.description %>
+</blockquote>
+
+<%= link_to  @blackboard.material.url(:original, false) do %>
+   <button class="btn-large btn-primary">ダウンロード</button>
+<% end %>
+<br><br>
+
+<%= image_tag @blackboard.material.url(:original) %><br>
 <%= link_to "教科ページに戻る", subject_path(@subject) %><br>

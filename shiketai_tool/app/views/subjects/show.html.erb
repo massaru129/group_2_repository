@@ -3,10 +3,13 @@
 <%= @subject.semester %>　|　<%= @subject.day_of_a_week %>　|　<%= @subject.period %><br><br>
 
 <h4><%= @subject.description %></h4>
-
-
+<br>
+<%= link_to  new_subject_blackboard_path(@subject.id) do %>
+  <button class="btn btn-primary">板書のアップロード</button>
+<% end %>
+<br>
+<br>
 <%= render "blackboards/blackboards" %>
-<%= link_to "新しく板書を登録する", new_subject_blackboard_path(@subject.id) %>
 <br><br>
 <%= link_to "教科情報を編集する", edit_subject_path %>|
-<%= link_to "教科一覧に戻る", subjects_path %>
+<%= link_to "科目一覧に戻る", subjects_path %>
