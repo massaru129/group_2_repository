@@ -1,6 +1,11 @@
-<h1>教科一覧</h1>
-<%= link_to "新しく教科を追加する。", new_subject_path %>
-<table class="table table-primary table-bordered" >
+<h1>科目一覧</h1>
+<br>
+<%= link_to  new_subject_path do %>
+  <button class="btn btn-primary">新しい科目の登録</button>
+<% end %>
+<br><br>
+
+<table class="table table-primary table-striped" >
   <tr>
     <th>科目名</th>
 	<th>教員名</th>
