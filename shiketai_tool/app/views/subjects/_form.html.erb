@@ -8,35 +8,36 @@
     <% end %>
     </ul>
   </div>
-  <% end %> 
+  <% end %>
+  <br>
   <p>
-    <%= f.label :subject_name %><br>
-    <%= f.text_area :subject_name %>
+    <%= f.label :subject_name , "科目名" %>
+    <%= f.text_field :subject_name %>
   </p>
  
   <p>
-    <%= f.label :teacher %><br>
-    <%= f.text_area :teacher %>
+    <%= f.label :teacher , "教員" %>
+    <%= f.text_field :teacher %>
   </p>
 
   <p>
-    <%= f.label :day_of_a_week %><br>
+    <%= f.label :day_of_a_week , "曜日" %>
     <%= f.collection_select :day_of_a_week, DayOfAWeek.all, :day_of_a_week, :day_of_a_week %>
   <p>
   
   <p>
-    <%= f.label :period %><br>
+    <%= f.label :period , "時限" %>
     <%= f.collection_select :period, Period.all, :period, :period %>
   <p>
   
   <p>
-    <%= f.label :semester %><br>
+    <%= f.label :semester , "学期" %>
     <%= f.collection_select :semester, Semester.all, :semester, :semester %>
   <p>
   
   <p>
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.label :description, "説明" %>
+    <%= f.text_area :description %>
   <p>
  
   <p>
