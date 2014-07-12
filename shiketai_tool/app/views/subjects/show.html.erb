@@ -1,10 +1,9 @@
 <h1><%= @subject.subject_name%></h1>
-教科名: <%= @subject.subject_name %><br>
-先生: <%= @subject.teacher %><br>
-曜日: <%= @subject.day_of_a_week %><br>
-時限: <%= @subject.period %><br>
-学期: <%= @subject.semester %><br>
-説明: <%= @subject.description %><br>
+<h3>担当教員: <%= @subject.teacher %></h3>
+<%= @subject.semester %>　|　<%= @subject.day_of_a_week %>　|　<%= @subject.period %><br><br>
+
+<h4><%= @subject.description %></h4>
+
 
 <%= render "blackboards/blackboards" %>
 <%= link_to "新しく板書を登録する", new_subject_blackboard_path(@subject.id) %>
